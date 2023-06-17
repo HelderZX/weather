@@ -1,14 +1,3 @@
-/*
-<div class="input-box">
-    <label for="switch" class="input-label">Unidade:</label>
-    <div id="switch" class="triple-toggle-button">
-        <div class="option first"><button type="button">Kelvin</button></div>
-        <div class="option second active"><button type="button">Celsius</button></div>
-        <div class="option third"><button type="button">Fahrenheit</button></div>
-    </div>
-</div>
-*/
-
 const switchs = document.getElementById("switch");
 const button1 = switchs.getElementsByTagName('button')[0];
 const button2 = switchs.getElementsByTagName('button')[1];
