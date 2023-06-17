@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root{
     --color-white: #f2f2f2;
     --color-white-shadow: #b3b3b3;
@@ -218,4 +219,208 @@ body {
     box-shadow: 0 0 10px var(--color-blue);
     background-color: var(--color-blue);
     color: var(--color-white);
+=======
+:root{
+    --color-white: #f2f2f2;
+    --color-white-shadow: #b3b3b3;
+
+    --color-grey1: #b4b4b4;
+    --color-grey2: #858585;
+    --color-black1: #272727;
+    --color-black2: #1b1b1b;
+
+    --color-purple: #9b5de5;
+    --color-pink: #f15bb5;
+    --color-yellow: #fee440;
+    --color-blue: #00bbf9;
+    --color-cyan: #00f5d4;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: var(--color-black1);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.content{
+    padding: 60px 0;
+    background-color: var(--color-white);
+    border-radius: 40px 40px 0 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.nav-bar{
+    position: static;
+    top: 0;
+    width: 100%;
+    padding: 5px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.nav-bar i{
+    color: white;
+    font-size: 40px;
+}
+
+.card{
+    padding: 20px;
+    border-radius: 10px;
+    /*box-shadow: 0 0 20px var(--color-white-shadow);*/
+}
+
+.card.main{
+    background: white;
+    width: 450px;
+    color: var(--color-black2);
+}
+
+.border{
+    position: relative;
+    background: linear-gradient(90deg, rgba(241,91,181,1) 0%, rgba(155,93,229,1) 100%);
+    border-radius: 12px;
+    padding: 2px;
+}
+
+.border.error{
+    position: relative;
+    background: linear-gradient(90deg, red 0%, orange 100%);
+    border-radius: 12px;
+    padding: 2px;
+    margin-bottom: auto;
+}
+
+.card-title h1{
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+.card-content{
+    margin: 10px 0;
+}
+
+.card-content .description{
+    font-size: 18px;
+    margin: 0;
+}
+
+.card-content .main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-content .details {
+    display: flex;
+    align-items: center;
+}
+
+.main-temperature{
+    font-size: 48px;
+    font-weight: bold;
+    margin: 5px 0;
+} 
+
+.card-content .main i{
+    font-size: 32px;
+    margin: 10px;
+}
+
+.card-content .details i{
+    font-size: 18px;
+    margin: 10px;
+}
+
+.input-box {
+    margin: 20px 0;
+}
+
+.input-label{
+    position: relative;
+    top: -5px;
+    left: 5px;
+} 
+
+.input-select{
+    border: 0;
+    font-size: 16px;
+    background-color: transparent;
+    color: var(--color-white);
+}
+
+.input-select:focus{
+    outline: none;
+}
+
+.input-select option{
+    color: var(--color-black1);
+}
+
+.button-main{
+    background: rgb(241,91,181);
+    background: linear-gradient(90deg, rgba(241,91,181,1) 0%, rgba(155,93,229,1) 100%);
+    padding: 10px 20px;
+    color: var(--color-white);
+    border-radius: 10rem;
+    border: 0;
+    font-size: 16px;
+    display: inherit;
+    margin: auto;
+}
+
+.button-main:hover{
+    box-shadow: 0 0 10px var(--color-pink);
+}
+
+.input-search{
+    padding: 10px 20px;
+    border-radius: 10rem;
+    border: 1px solid var(--color-grey2);
+    font-size: 16px;
+    display: inherit;
+} 
+
+.triple-toggle-button{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid var(--color-grey2);
+    border-radius: 10rem;
+    flex-basis: min-content;
+    width: 260px;
+}
+
+.triple-toggle-button .option {
+    padding: 5px 15px;
+    border-radius: 5rem;
+}
+
+.first.active{
+    box-shadow: 0 0 10px var(--color-purple);
+    background-color: var(--color-purple);
+    color: var(--color-white);
+}
+
+.second.active{
+    box-shadow: 0 0 10px var(--color-yellow);
+    background-color: var(--color-yellow);
+    color: var(--color-black1);
+} 
+
+.third.active{
+    box-shadow: 0 0 10px var(--color-blue);
+    background-color: var(--color-blue);
+    color: var(--color-white);
+>>>>>>> 6d64880caa4c3d5eb96874a092e3dcb4ea914ba6
 } 
