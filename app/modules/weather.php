@@ -10,7 +10,7 @@ class WeatherApi{
     }
     
     function request($endpoint = '', $params = array()){
-        $uri = "https://api.openweathermap.org/".$endpoint."&appid=".$this->key."&units=metric&lang=ar";
+        $uri = "https://api.openweathermap.org/".$endpoint."&appid=".$this->key."&lang=ar";
         if(is_array($params)){
             foreach($params as $key => $value){
                 if(empty($value)) continue;
@@ -31,8 +31,8 @@ class WeatherApi{
         return $this->error;
     }
 
-    function info($lat, $lon){
-        $data = $this->request('data/2.5/weather?lat='.urlencode($lat).'&lon='.urlencode($lon).'');
+    function info($lat, $lon, $unit){
+        $data = $this->request('data/2.5/weather?lat='.urlencode($lat).'&lon='.urlencode($lon).'&units='.urlencode($unit).'');
 
         if(!empty($data) && is_Array($data)){
             $this->error = false;

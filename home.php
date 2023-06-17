@@ -1,4 +1,5 @@
 <?php
+   
    require_once 'app/config/config.php';
    require_once 'app/modules/weather.php';
    require_once 'app/modules/location.php';
@@ -6,8 +7,9 @@
    // Get Location Data
    
    $location = new LocationApi(LOCATION_API_KEY);
+   $hasSearch = isset($_REQUEST['search']);
    
-   if(isset($_REQUEST['search'])){
+   if($hasSearch){
       $locationInfo = $location->info($_REQUEST['search']);
    }else{
       $locationInfo = $location->info("Inglaterra, Londres");
@@ -16,9 +18,10 @@
    if($location->is_error() == false){
       $lat = $locationInfo['data'][0]['latitude'];
       $lon = $locationInfo['data'][0]['longitude'];
+      $unit = $_REQUEST['unit'];
       // Get Weather Data
       $weather = new WeatherApi(WEATHER_API_KEY);
-      $weatherInfo = $weather->info($lat, $lon);
+      $weatherInfo = $weather->info($lat, $lon, $unit);
    }
 ?>
 
@@ -64,7 +67,9 @@
                         <p class="main-temperature"><?php echo $weatherInfo['main']['temp'];?>º</p>
                         <p class="description"><?php echo $weatherInfo['weather'][0]['description'];?></p>
                      </div>
-                     <h1><i class="fa-solid fa-cloud-sun"></i></h1>
+                     <h1>
+                        <i id="icon" class="fas "></i>
+                     </h1>
                   </div>
                </div>
             </div>
@@ -128,7 +133,7 @@
       <div class="right">
          <div class="card">
             <form method="POST" action="/home.php">
-               <div class="card-title">
+               <div class="card-title text-center">
                   <h1>Pesquisar</h1>
                </div>
                <div class="card-content">
@@ -140,22 +145,57 @@
                   <div class="input-box">
                      <label for="switch" class="input-label">Unidade:</label>
                      <div id="switch" class="triple-toggle-button">
-                        <div class="option first">Kelvin</div>
-                        <div class="option second active">Celsius</div>
-                        <div class="option third">Fahrenheit</div>
+                        <div class="option first default"><button type="button" value="default">Kelvin</button></div>
+                        <div class="option second metric"><button type="button" value="metric">Celsius</button></div>
+                        <div class="option third imperial"><button type="button" value="imperial">Fahrenheit</button></div>
                      </div>
+                     <input type="text" id="tempType" name="unit" value="metric" hidden>
                   </div>
                   
                   <div class="input-box">
                      <button class="button-main">Procurar</button>
                   </div>
-                  
                </div>
             </form>
          </div>
       </div>
    </div>
-    <script href="js/home.js"></script>
+   <script type="text/javascript" src="js/home.js"></script>
+   <script>
+      var search = "";
+      search = "<?php if($hasSearch) echo $_REQUEST['search']?>";
+      const searchInput = document.getElementById("search");
+      searchInput.value = search;
+
+      tempType = "<?php if($hasSearch) echo $_REQUEST['unit']?>";
+      document.getElementsByClassName(tempType)[0].classList.add("active");
+      iconMain = "<?php if($hasSearch) echo $weatherInfo['weather'][0]['main']?>";
+      icon = "";
+      switch(iconMain){
+         case "Clouds":
+            icon = "fa-cloud";
+         break;
+         case "Clear":
+            icon = "fa-sun";
+         break;
+         case "Snow":
+            icon = "fa-snowflake";
+         break;
+         case "Rain":
+            icon = "fa-cloud-showers-heavy";
+         break;
+         case "Drizzle":
+            icon = "fa-cloud-drizzle";
+         break;
+         case "Thunderstorm":
+            icon = "fa-bolt";
+         break;
+         default:
+            icon = "fa-cloud";
+      }
+      
+      document.getElementById("icon").classList.add(icon);
+   </script>
 </body>
 </html>
 
