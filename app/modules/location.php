@@ -8,7 +8,7 @@ class LocationApi{
         if(!empty($key)) $this->key = $key;
     }
 
-    function info($query){
+    function info($query, $lang){
         $uri = "http://api.positionstack.com/v1/forward?access_key=".$this->key."&query=".$query."&limit=1";
         $response = @file_get_contents($uri);
         return json_decode($response, true);
