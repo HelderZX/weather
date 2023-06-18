@@ -29,12 +29,12 @@ function Language(lang)
 var en = {
     greeting: 'hello',
     
-    weather : 'weather',
+    weather : 'Weather',
 
-    portuguese : 'portuguese',
-    english : 'english',
-    spanish : 'spanish',
-    french : 'french',
+    portuguese : 'Portuguese',
+    english : 'English',
+    spanish : 'Spanish',
+    french : 'French',
 
     details : 'Details',
     thermal_sensation : 'thermal sensation',
@@ -54,16 +54,16 @@ var en = {
 var pt = {
     greeting: 'olá',
 
-    weather : 'tempo',
+    weather : 'Tempo',
 
-    portuguese : 'português',
-    english : 'inglês',
-    spanish : 'espanhol',
-    french : 'francês',
+    portuguese : 'Português',
+    english : 'Inglês',
+    spanish : 'Espanhol',
+    french : 'Francês',
 
     details : 'Detalhes',
     thermal_sensation : 'sensação térmica',
-    humidity : 'umidade',
+    humidity : 'humidade',
     pressure : 'pressão',
     wind : 'vento',
 
@@ -79,12 +79,12 @@ var pt = {
 var es = {
     greeting: 'hola',
 
-    weather : 'tiempo',
+    weather : 'Tiempo',
 
-    portuguese : 'portugués',
-    english : 'inglés',
-    spanish : 'español',
-    french : 'francés',
+    portuguese : 'Portugués',
+    english : 'Inglés',
+    spanish : 'Español',
+    french : 'Francés',
 
     details : 'Detalles', 
     thermal_sensation : 'sensación térmica',
@@ -104,12 +104,12 @@ var es = {
 var fr = {
     greeting: 'bonjour',
 
-    weather : 'météo',
+    weather : 'Météo',
 
-    portuguese : 'portugais',
-    english : 'anglais',
-    spanish : 'espagnol',
-    french : 'français',
+    portuguese : 'Portugais',
+    english : 'Anglais',
+    spanish : 'Espagnol',
+    french : 'Français',
 
     details : 'Détails',
     thermal_sensation : 'sensation thermique',
