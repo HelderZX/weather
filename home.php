@@ -107,7 +107,7 @@ if ($location->is_error() == false) {
                             <div><i class="fa-solid fa-down-left-and-up-right-to-center"></i></div>
                             <div>
                                 <p id="pressure" class="description"></p>
-                                <p class="description"><?php echo $weatherInfo['main']['pressure']; ?></p>
+                                <p class="description"><?php echo $weatherInfo['main']['pressure']; ?> hPa</p>
                             </div>
                         </div>
                     </div>
